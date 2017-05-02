@@ -49,7 +49,7 @@ func (p Plugin) Exec() error {
 	con.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 	con.Debug = true
 
-	logrus.WithFields(log.Fields{
+	logrus.WithFields(logrus.Fields{
 		"server":  p.Config.Server,
 		"nick":    p.Config.Nick,
 		"tls":     p.Config.Tls,
