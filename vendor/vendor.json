@@ -1,0 +1,37 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "htjvdG/znrHmFYRQBqA2vHrJsF4=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "cd7d1bbe41066b6c1f19780f895901052150a575",
+			"revisionTime": "2016-04-25T09:32:37Z"
+		},
+		{
+			"checksumSHA1": "qzl/TNo4WnfR+PZRfk3iFHg68sM=",
+			"path": "github.com/joho/godotenv",
+			"revision": "325433c502d409f3c3dc820098fb0cfe38d98dc7",
+			"revisionTime": "2017-03-28T20:01:54Z"
+		},
+		{
+			"checksumSHA1": "y9Gfz7YLBSVXgFGO62RQ5LWN7f0=",
+			"path": "github.com/rendom/ircFormat",
+			"revision": "bc04ed6ad950f99d4d426794c946fd1394018f72",
+			"revisionTime": "2015-12-19T14:07:15Z"
+		},
+		{
+			"checksumSHA1": "cOWfZLz//UBagM3dfAWe2/goZ14=",
+			"path": "github.com/thoj/go-ircevent",
+			"revision": "db3338ebd4546123dfcde5dfad6057d1d646a42d",
+			"revisionTime": "2015-10-28T13:31:23Z"
+		},
+		{
+			"checksumSHA1": "K/CP3EBR0TUpw8DPpjRExGEYNkY=",
+			"path": "github.com/urfave/cli",
+			"revision": "ab403a54a148f2d857920810291539e1f817ee7b",
+			"revisionTime": "2017-04-24T21:31:22Z"
+		}
+	],
+	"rootPath": "github.com/drone-irc"
+}

@@ -1,0 +1,17 @@
+workspace:
+  base: /go
+  path: src/github.com/rendom/drone-irc
+
+pipeline:
+  build:
+    image: golang:1.8
+    commands:
+      - go vet
+      - go build -o drone-irc
+  publish:
+    image: plugins/docker
+    repo: rendom/drone-irc
+    secrets: [ docker_username, docker_password ]
+    when:
+      branch: master
+      event: push
