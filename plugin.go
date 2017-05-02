@@ -49,6 +49,13 @@ func (p Plugin) Exec() error {
 	con.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 	con.Debug = true
 
+	logrus.WithFields(log.Fields{
+		"server":  p.Config.Server,
+		"nick":    p.Config.Nick,
+		"tls":     p.Config.Tls,
+		"channel": p.Config.Channel,
+	}).Info("Connection to irc")
+
 	err := con.Connect(p.Config.Server)
 
 	if err != nil {
