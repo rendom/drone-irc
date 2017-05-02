@@ -15,8 +15,6 @@ pipeline:
     when:
       branch: master
       event: push
-  notify:
+  irc:
     image: rendom/drone-irc
     secrets: [irc_server, irc_nick, irc_tls, irc_channel]
-    when:
-      status: [ success, failure ]
