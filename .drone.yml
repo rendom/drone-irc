@@ -7,7 +7,7 @@ pipeline:
     image: golang:1.8
     commands:
       - go vet
-      - go build -o drone-irc
+      - go build -a -ldflags 'w' -o drone-irc
   publish:
     image: plugins/docker
     repo: rendom/drone-irc
