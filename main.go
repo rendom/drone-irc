@@ -25,22 +25,22 @@ func main() {
 		cli.StringFlag{
 			Name:   "server",
 			Usage:  "irc server",
-			EnvVar: "IRC_SERVER,PLUGIN_SERVER",
+			EnvVar: "PLUGIN_SERVER,IRC_SERVER",
 		},
 		cli.StringFlag{
 			Name:   "channel",
 			Usage:  "irc channel",
-			EnvVar: "IRC_CHANNEL,PLUGIN_CHANNEL",
+			EnvVar: "PLUGIN_CHANNEL,IRC_CHANNEL",
 		},
 		cli.StringFlag{
 			Name:   "nick",
 			Usage:  "IRC_NICK",
-			EnvVar: "IRC_NICK,PLUGIN_NICK",
+			EnvVar: "PLUGIN_NICK,IRC_NICK",
 		},
 		cli.BoolFlag{
 			Name:   "tls",
 			Usage:  "Use tls",
-			EnvVar: "IRC_TLS,PLUGIN_TLS",
+			EnvVar: "PLUGIN_TLS,IRC_TLS",
 		},
 		cli.StringFlag{
 			Name:   "repo.owner",
