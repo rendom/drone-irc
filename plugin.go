@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
 	"crypto/tls"
 
+	"github.com/Sirupsen/logrus"
 	"github.com/rendom/ircFormat"
 	"github.com/thoj/go-ircevent"
 )
@@ -52,12 +52,12 @@ func (p Plugin) Exec() error {
 	err := con.Connect(p.Config.Server)
 
 	if err != nil {
-		return err
+		logrus.Fatal(err)
 	}
 
 	go func() {
 		if err := <-con.ErrorChan(); err != nil {
-			os.Exit(1)
+			logrus.Fatal(err)
 			return
 		}
 	}()
