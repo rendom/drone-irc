@@ -81,7 +81,7 @@ func (p Plugin) Exec() error {
 			p.Build.Message,
 			p.Build.Branch,
 			p.Build.Author,
-			p.Repo.CommitLink,
+			p.Build.CommitLink,
 		)
 		con.Quit()
 	})
