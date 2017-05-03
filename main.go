@@ -55,8 +55,8 @@ func main() {
 		cli.StringFlag{
 			Name: "commit.link",
 			Usage: "commit link",
-			EnvVar: "DRONE_COMMIT_LINK"
-		}
+			EnvVar: "DRONE_COMMIT_LINK",
+		},
 		cli.StringFlag{
 			Name:   "commit.sha",
 			Usage:  "git commit sha",
