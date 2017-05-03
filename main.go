@@ -53,6 +53,11 @@ func main() {
 			EnvVar: "DRONE_REPO_NAME",
 		},
 		cli.StringFlag{
+			Name: "commit.link",
+			Usage: "commit link",
+			EnvVar: "DRONE_COMMIT_LINK"
+		}
+		cli.StringFlag{
 			Name:   "commit.sha",
 			Usage:  "git commit sha",
 			EnvVar: "DRONE_COMMIT_SHA",
@@ -151,6 +156,7 @@ func run(c *cli.Context) error {
 			Link:    c.String("build.link"),
 			Started: c.Int64("build.started"),
 			Created: c.Int64("build.created"),
+			CommitLink: c.String("commit.link")
 		},
 		Config: Config{
 			Server:  c.String("server"),

@@ -25,6 +25,7 @@ type (
 		Message string
 		Status  string
 		Link    string
+		CommitLink string
 		Started int64
 		Created int64
 	}
@@ -47,7 +48,7 @@ func (p Plugin) Exec() error {
 	con := irc.IRC(p.Config.Nick, "Drone IRC")
 	con.UseTLS = p.Config.Tls
 	con.TLSConfig = &tls.Config{InsecureSkipVerify: true}
-	con.Debug = true
+	con.Debug = false
 
 	logrus.WithFields(logrus.Fields{
 		"server":  p.Config.Server,
@@ -72,13 +73,15 @@ func (p Plugin) Exec() error {
 	con.AddCallback("001", func(event *irc.Event) {
 		con.Join(p.Config.Channel)
 		con.Privmsgf(p.Config.Channel,
-			"*%s* <%s/%s#%s> (%s) by %s",
+			"*%s* <%s/%s#%s> %s (%s) by %s\n%s",
 			status(p.Build),
 			p.Repo.Owner,
 			p.Repo.Name,
 			p.Build.Commit[:8],
+			p.Build.Message
 			p.Build.Branch,
 			p.Build.Author,
+			p.Repo.CommitLink
 		)
 		con.Quit()
 	})
