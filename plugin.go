@@ -83,6 +83,7 @@ func (p Plugin) Exec() error {
 			p.Build.Author,
 			p.Build.CommitLink,
 		)
+		con.Part(p.Config.Channel)
 		con.Quit()
 	})
 	con.Loop()
