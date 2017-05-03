@@ -19,3 +19,5 @@ pipeline:
     image: rendom/drone-irc
     tls: true
     secrets: [irc_server, irc_nick, irc_channel]
+    when:
+      status: [ failure, success ]
