@@ -53,8 +53,8 @@ func main() {
 			EnvVar: "DRONE_REPO_NAME",
 		},
 		cli.StringFlag{
-			Name: "commit.link",
-			Usage: "commit link",
+			Name:   "commit.link",
+			Usage:  "commit link",
 			EnvVar: "DRONE_COMMIT_LINK",
 		},
 		cli.StringFlag{
@@ -130,7 +130,6 @@ func main() {
 	if err := app.Run(os.Args); err != nil {
 		logrus.Fatal(err)
 	}
-
 }
 
 func run(c *cli.Context) error {
@@ -144,19 +143,19 @@ func run(c *cli.Context) error {
 			Name:  c.String("repo.name"),
 		},
 		Build: Build{
-			Tag:     c.String("build.tag"),
-			Number:  c.Int("build.number"),
-			Event:   c.String("build.event"),
-			Status:  c.String("build.status"),
-			Commit:  c.String("commit.sha"),
-			Ref:     c.String("commit.ref"),
-			Branch:  c.String("commit.branch"),
-			Author:  c.String("commit.author"),
-			Message: c.String("commit.message"),
-			Link:    c.String("build.link"),
-			Started: c.Int64("build.started"),
-			Created: c.Int64("build.created"),
-			CommitLink: c.String("commit.link")
+			Tag:        c.String("build.tag"),
+			Number:     c.Int("build.number"),
+			Event:      c.String("build.event"),
+			Status:     c.String("build.status"),
+			Commit:     c.String("commit.sha"),
+			Ref:        c.String("commit.ref"),
+			Branch:     c.String("commit.branch"),
+			Author:     c.String("commit.author"),
+			Message:    c.String("commit.message"),
+			Link:       c.String("build.link"),
+			Started:    c.Int64("build.started"),
+			Created:    c.Int64("build.created"),
+			CommitLink: c.String("commit.link"),
 		},
 		Config: Config{
 			Server:  c.String("server"),

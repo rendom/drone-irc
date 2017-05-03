@@ -15,19 +15,19 @@ type (
 	}
 
 	Build struct {
-		Tag     string
-		Event   string
-		Number  int
-		Commit  string
-		Ref     string
-		Branch  string
-		Author  string
-		Message string
-		Status  string
-		Link    string
+		Tag        string
+		Event      string
+		Number     int
+		Commit     string
+		Ref        string
+		Branch     string
+		Author     string
+		Message    string
+		Status     string
+		Link       string
 		CommitLink string
-		Started int64
-		Created int64
+		Started    int64
+		Created    int64
 	}
 
 	Config struct {
@@ -78,10 +78,10 @@ func (p Plugin) Exec() error {
 			p.Repo.Owner,
 			p.Repo.Name,
 			p.Build.Commit[:8],
-			p.Build.Message
+			p.Build.Message,
 			p.Build.Branch,
 			p.Build.Author,
-			p.Repo.CommitLink
+			p.Repo.CommitLink,
 		)
 		con.Quit()
 	})
