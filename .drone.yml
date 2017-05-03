@@ -17,4 +17,5 @@ pipeline:
       event: push
   irc:
     image: rendom/drone-irc
-    secrets: [irc_server, irc_nick, irc_tls, irc_channel]
+    tls: true
+    secrets: [irc_server, irc_nick, irc_channel]
